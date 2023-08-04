@@ -29,9 +29,9 @@ public class Main {
 
     private static void task2() {
         System.out.println("Задача 2");
-        int min = 199_000;
-        int max = 0;
         int[] array = generateRandomArray();
+        int min = array[0];
+        int max = array[1];
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
@@ -51,18 +51,14 @@ public class Main {
         for (int value : array) {
             totalExpenses += value;
         }
-        double averageExpense = (double) totalExpenses / 30;
+        double averageExpense = (double) totalExpenses / array.length;
         System.out.println("Средняя сумма трат за месяц составила " + averageExpense + " рублей.");
     }
 
     private static void task4() {
         System.out.println("Задача 4");
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = 0; i < reverseFullName.length; i++) {
-            int middle = reverseFullName.length / 2;
-            if (i == middle) {
-                break;
-            }
+        for (int i = 0; i < reverseFullName.length/2; i++) {
             char temporaryValue = reverseFullName[i];
             reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
             reverseFullName[reverseFullName.length - 1 - i] = temporaryValue;
